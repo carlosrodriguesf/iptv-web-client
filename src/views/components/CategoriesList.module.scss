@@ -1,0 +1,35 @@
+@import "./src/assets/scss/mixins";
+
+.categories {
+  height: 100%;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    background-color: #FFF;
+  }
+
+  .category {
+    @include clean-button;
+
+    width: 100%;
+    padding: 15px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(dodgerblue, 15%);
+      color: #FFFFFF;
+    }
+
+    &.active {
+      background-color: dodgerblue;
+      color: #FFFFFF;
+    }
+  }
+}

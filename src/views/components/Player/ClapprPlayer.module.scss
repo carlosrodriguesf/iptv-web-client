@@ -1,0 +1,19 @@
+@import "../../../assets/scss/mixins";
+
+.clappr-player {
+  @include flex-center;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+
+  [data-player], [data-player] [data-container] {
+    height: 100%;
+    width: 100%;
+  }
+
+  video {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

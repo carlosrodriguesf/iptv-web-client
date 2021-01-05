@@ -1,0 +1,60 @@
+@import "./src/assets/scss/mixins";
+@import "./src/assets/scss/variables";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  .live-player {
+    width: 100%;
+    height: calc(100% - #{$header-height});
+    display: flex;
+
+    .navigation {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      flex-shrink: 0;
+
+      .category-container {
+        flex-shrink: 0;
+        width: 30%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+
+      .channel-container {
+        flex-shrink: 0;
+        width: 70%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+
+    .player-container {
+      display: block;
+      width: 50%;
+      height: 100%;
+      flex-shrink: 0;
+
+      .player {
+        height: 50%;
+      }
+
+      &.epg-disabled .player {
+        height: 100%;
+      }
+
+      .epg {
+        @include flex-center;
+        background-color: lightgray;
+
+        * {
+          color: gray;
+        }
+      }
+    }
+  }
+}

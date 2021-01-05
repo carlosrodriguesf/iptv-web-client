@@ -1,0 +1,84 @@
+@import "../../../assets/scss/mixins";
+
+.channel-table-container {
+  width: 100%;
+  min-height: 100%;
+  background-color: #FFF;
+
+  .channelTable {
+    background-color: #FFF;
+    width: 100%;
+
+    tr {
+      &:first-child td {
+        border-top: 1px solid lightgray;
+      }
+
+      td {
+        overflow: hidden;
+        border: {
+          right: 1px solid lightgray;
+          bottom: 1px solid lightgray;
+        }
+
+        .channel {
+          @include clean-button;
+          @include flex-center($direction: column);
+
+          width: 100%;
+          overflow: hidden;
+
+          &, & * {
+            cursor: pointer;
+          }
+
+          &.active {
+            background-color: lightgray;
+          }
+
+          .title {
+            @include flex-center;
+            min-height: 50px;
+            max-height: 50px;
+          }
+
+          .logo {
+            width: 100%;
+            height: 50px;
+            max-height: 50px;
+            padding: 10px;
+            margin-top: 10px;
+
+            img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          }
+
+          &.movie {
+            .logo {
+              height: 250px;
+              max-height: 250px;
+            }
+
+            .title {
+
+              padding: 10px;
+              min-height: 50px;
+              max-height: 50px;
+            }
+          }
+        }
+
+        &:first-child {
+          border-left: 1px solid lightgray;
+        }
+
+        .logo img {
+          max-width: 30px;
+          max-height: 30px;
+        }
+      }
+    }
+  }
+}

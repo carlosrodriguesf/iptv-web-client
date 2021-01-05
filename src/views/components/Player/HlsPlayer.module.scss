@@ -1,0 +1,14 @@
+@import "../../../assets/scss/mixins";
+
+.player {
+  @include flex-center;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+
+  video {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

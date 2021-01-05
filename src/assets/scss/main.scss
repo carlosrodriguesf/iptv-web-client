@@ -1,0 +1,11 @@
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+body {
+  background: #f6f7fd;
+  font-family: 'Work Sans', sans-serif;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+}

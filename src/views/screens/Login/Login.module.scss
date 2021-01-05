@@ -1,0 +1,68 @@
+@import "./src/assets/scss/mixins";
+
+$blue: lighten(dodgerblue, 35%);
+
+.login {
+  @include flex-center;
+  width: 100vw;
+  height: 100vh;
+
+  .form {
+    display: grid;
+    grid-template-areas:  "url url url url"
+                          "usr usr pas pas"
+                          "non non non aut";
+    width: 600px;
+    padding: 20px;
+    //background-color: #FFF;
+    //box-shadow: 0 0 2px lightgrey;
+    //border-radius: 10px;
+
+    .field {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 5px;
+      margin: 5px;
+      width: 100%;
+
+      .title {
+        text-transform: uppercase;
+        color: lighten(dodgerblue, 0%);
+        padding: 5px;
+      }
+
+      .input {
+        @include clean-button;
+        height: 34px;
+        border: 1px solid $blue;
+        border-radius: 4px;
+        padding: 20px;
+        width: 100%;
+        background-color: #FFF;
+        color: gray;
+      }
+
+      &.url {
+        grid-area: url;
+      }
+
+      &.user {
+        grid-area: usr;
+      }
+
+      &.pass {
+        grid-area: pas;
+      }
+    }
+
+    .auth-btn {
+      @include clean-button;
+      grid-area: aut;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      background-color: $blue;
+    }
+  }
+}
