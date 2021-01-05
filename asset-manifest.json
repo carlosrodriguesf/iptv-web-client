@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.280b82b7.chunk.css",
-    "main.js": "/static/js/main.421f928e.chunk.js",
-    "main.js.map": "/static/js/main.421f928e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8401e828.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8401e828.js.map",
-    "static/js/2.1d0533b3.chunk.js": "/static/js/2.1d0533b3.chunk.js",
-    "static/js/2.1d0533b3.chunk.js.map": "/static/js/2.1d0533b3.chunk.js.map",
-    "static/js/3.1e440a70.chunk.js": "/static/js/3.1e440a70.chunk.js",
-    "static/js/3.1e440a70.chunk.js.map": "/static/js/3.1e440a70.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.280b82b7.chunk.css.map": "/static/css/main.280b82b7.chunk.css.map",
-    "static/js/2.1d0533b3.chunk.js.LICENSE.txt": "/static/js/2.1d0533b3.chunk.js.LICENSE.txt",
-    "static/media/tv-solid.4be3af6c.svg": "/static/media/tv-solid.4be3af6c.svg"
+    "main.css": "/iptv-web-client/static/css/main.280b82b7.chunk.css",
+    "main.js": "/iptv-web-client/static/js/main.421f928e.chunk.js",
+    "main.js.map": "/iptv-web-client/static/js/main.421f928e.chunk.js.map",
+    "runtime-main.js": "/iptv-web-client/static/js/runtime-main.9f890ff7.js",
+    "runtime-main.js.map": "/iptv-web-client/static/js/runtime-main.9f890ff7.js.map",
+    "static/js/2.1d0533b3.chunk.js": "/iptv-web-client/static/js/2.1d0533b3.chunk.js",
+    "static/js/2.1d0533b3.chunk.js.map": "/iptv-web-client/static/js/2.1d0533b3.chunk.js.map",
+    "static/js/3.1e440a70.chunk.js": "/iptv-web-client/static/js/3.1e440a70.chunk.js",
+    "static/js/3.1e440a70.chunk.js.map": "/iptv-web-client/static/js/3.1e440a70.chunk.js.map",
+    "index.html": "/iptv-web-client/index.html",
+    "static/css/main.280b82b7.chunk.css.map": "/iptv-web-client/static/css/main.280b82b7.chunk.css.map",
+    "static/js/2.1d0533b3.chunk.js.LICENSE.txt": "/iptv-web-client/static/js/2.1d0533b3.chunk.js.LICENSE.txt",
+    "static/media/tv-solid.4be3af6c.svg": "/iptv-web-client/static/media/tv-solid.4be3af6c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8401e828.js",
+    "static/js/runtime-main.9f890ff7.js",
     "static/js/2.1d0533b3.chunk.js",
     "static/css/main.280b82b7.chunk.css",
     "static/js/main.421f928e.chunk.js"
