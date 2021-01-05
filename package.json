@@ -1,5 +1,6 @@
 {
   "name": "xtream-player",
+  "homepage": "http://carlosrodriguesf.github.io/iptv-web-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
