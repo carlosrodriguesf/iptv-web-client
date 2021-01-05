@@ -1,0 +1,1811 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./closed_captions.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./dvr_controls.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./error_screen.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./flash.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./media-control.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./poster.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./seek_time.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./spinner.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./style.scss */
+
+/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/lib!../../../../node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./watermark.scss */
+
+/*! ../../../../node_modules/css-loader/lib/css-base.js */
+
+/*! ../../../../node_modules/css-loader/lib/url/escape.js */
+
+/*! ../../../../node_modules/style-loader/lib/addStyles.js */
+
+/*! ../../base/base_object */
+
+/*! ../../base/container_plugin */
+
+/*! ../../base/core_plugin */
+
+/*! ../../base/error_mixin */
+
+/*! ../../base/events */
+
+/*! ../../base/playback */
+
+/*! ../../base/styler */
+
+/*! ../../base/template */
+
+/*! ../../base/ui_container_plugin */
+
+/*! ../../base/ui_core_plugin */
+
+/*! ../../base/ui_object */
+
+/*! ../../base/utils */
+
+/*! ../../components/browser */
+
+/*! ../../components/container */
+
+/*! ../../components/container_factory */
+
+/*! ../../components/error */
+
+/*! ../../components/error/ */
+
+/*! ../../components/error/error */
+
+/*! ../../components/mediator */
+
+/*! ../../components/player_info */
+
+/*! ../../modules/_core */
+
+/*! ../../modules/_wks-ext */
+
+/*! ../../modules/es6.array.from */
+
+/*! ../../modules/es6.object.assign */
+
+/*! ../../modules/es6.object.create */
+
+/*! ../../modules/es6.object.define-property */
+
+/*! ../../modules/es6.object.get-own-property-descriptor */
+
+/*! ../../modules/es6.object.keys */
+
+/*! ../../modules/es6.object.set-prototype-of */
+
+/*! ../../modules/es6.object.to-string */
+
+/*! ../../modules/es6.string.iterator */
+
+/*! ../../modules/es6.symbol */
+
+/*! ../../modules/es7.symbol.async-iterator */
+
+/*! ../../modules/es7.symbol.observable */
+
+/*! ../../modules/web.dom.iterable */
+
+/*! ../../playbacks/base_flash_playback */
+
+/*! ../../playbacks/flash */
+
+/*! ../../playbacks/flashls */
+
+/*! ../../playbacks/hls */
+
+/*! ../../playbacks/html5_audio */
+
+/*! ../../playbacks/html5_video */
+
+/*! ../../playbacks/html_img */
+
+/*! ../../playbacks/no_op */
+
+/*! ../../plugins/click_to_pause */
+
+/*! ../../plugins/closed_captions */
+
+/*! ../../plugins/dvr_controls */
+
+/*! ../../plugins/end_video */
+
+/*! ../../plugins/error_screen */
+
+/*! ../../plugins/favicon */
+
+/*! ../../plugins/google_analytics */
+
+/*! ../../plugins/log */
+
+/*! ../../plugins/media_control */
+
+/*! ../../plugins/poster */
+
+/*! ../../plugins/seek_time */
+
+/*! ../../plugins/sources */
+
+/*! ../../plugins/spinner_three_bounce */
+
+/*! ../../plugins/stats */
+
+/*! ../../plugins/strings */
+
+/*! ../../plugins/watermark */
+
+/*! ../../vendor */
+
+/*! ../base/base_object */
+
+/*! ../base/core_plugin */
+
+/*! ../base/error_mixin */
+
+/*! ../base/events */
+
+/*! ../base/utils */
+
+/*! ../components/browser */
+
+/*! ../components/error */
+
+/*! ../core */
+
+/*! ../core-js/array/from */
+
+/*! ../core-js/object/assign */
+
+/*! ../core-js/object/create */
+
+/*! ../core-js/object/define-property */
+
+/*! ../core-js/object/set-prototype-of */
+
+/*! ../core-js/symbol */
+
+/*! ../core-js/symbol/iterator */
+
+/*! ../demux/demuxer-inline */
+
+/*! ../demux/demuxer-worker.js */
+
+/*! ../events */
+
+/*! ../helpers/typeof */
+
+/*! ../icons/01-play.svg */
+
+/*! ../icons/02-pause.svg */
+
+/*! ../icons/03-stop.svg */
+
+/*! ../icons/04-volume.svg */
+
+/*! ../icons/05-mute.svg */
+
+/*! ../icons/06-expand.svg */
+
+/*! ../icons/07-shrink.svg */
+
+/*! ../icons/08-hd.svg */
+
+/*! ../icons/09-cc.svg */
+
+/*! ../icons/10-reload.svg */
+
+/*! ../modules/core.get-iterator */
+
+/*! ../modules/es6.string.iterator */
+
+/*! ../modules/web.dom.iterable */
+
+/*! ../player_info */
+
+/*! ../plugins/log */
+
+/*! ../utils/get-self-scope */
+
+/*! ../utils/logger */
+
+/*! ./../../../node_modules/node-libs-browser/node_modules/process/browser.js */
+
+/*! ./Roboto.ttf */
+
+/*! ./_a-function */
+
+/*! ./_add-to-unscopables */
+
+/*! ./_an-object */
+
+/*! ./_array-includes */
+
+/*! ./_classof */
+
+/*! ./_cof */
+
+/*! ./_core */
+
+/*! ./_create-property */
+
+/*! ./_ctx */
+
+/*! ./_defined */
+
+/*! ./_descriptors */
+
+/*! ./_dom-create */
+
+/*! ./_enum-bug-keys */
+
+/*! ./_enum-keys */
+
+/*! ./_export */
+
+/*! ./_fails */
+
+/*! ./_global */
+
+/*! ./_has */
+
+/*! ./_hide */
+
+/*! ./_html */
+
+/*! ./_ie8-dom-define */
+
+/*! ./_iobject */
+
+/*! ./_is-array */
+
+/*! ./_is-array-iter */
+
+/*! ./_is-object */
+
+/*! ./_iter-call */
+
+/*! ./_iter-create */
+
+/*! ./_iter-define */
+
+/*! ./_iter-detect */
+
+/*! ./_iter-step */
+
+/*! ./_iterators */
+
+/*! ./_keyof */
+
+/*! ./_library */
+
+/*! ./_meta */
+
+/*! ./_object-assign */
+
+/*! ./_object-create */
+
+/*! ./_object-dp */
+
+/*! ./_object-dps */
+
+/*! ./_object-gopd */
+
+/*! ./_object-gopn */
+
+/*! ./_object-gopn-ext */
+
+/*! ./_object-gops */
+
+/*! ./_object-gpo */
+
+/*! ./_object-keys */
+
+/*! ./_object-keys-internal */
+
+/*! ./_object-pie */
+
+/*! ./_object-sap */
+
+/*! ./_property-desc */
+
+/*! ./_redefine */
+
+/*! ./_set-proto */
+
+/*! ./_set-to-string-tag */
+
+/*! ./_shared */
+
+/*! ./_shared-key */
+
+/*! ./_string-at */
+
+/*! ./_to-index */
+
+/*! ./_to-integer */
+
+/*! ./_to-iobject */
+
+/*! ./_to-length */
+
+/*! ./_to-object */
+
+/*! ./_to-primitive */
+
+/*! ./_uid */
+
+/*! ./_wks */
+
+/*! ./_wks-define */
+
+/*! ./_wks-ext */
+
+/*! ./base/base_object */
+
+/*! ./base/container_plugin */
+
+/*! ./base/core_plugin */
+
+/*! ./base/events */
+
+/*! ./base/playback */
+
+/*! ./base/styler */
+
+/*! ./base/template */
+
+/*! ./base/ui_container_plugin */
+
+/*! ./base/ui_core_plugin */
+
+/*! ./base/ui_object */
+
+/*! ./base/utils */
+
+/*! ./base_flash_playback */
+
+/*! ./base_object */
+
+/*! ./browser */
+
+/*! ./browser_data */
+
+/*! ./click_to_pause */
+
+/*! ./closed-hand.cur */
+
+/*! ./closed_captions */
+
+/*! ./components/browser */
+
+/*! ./components/container */
+
+/*! ./components/core */
+
+/*! ./components/error */
+
+/*! ./components/loader */
+
+/*! ./components/mediator */
+
+/*! ./components/player */
+
+/*! ./components/player_info */
+
+/*! ./container */
+
+/*! ./container_factory */
+
+/*! ./core */
+
+/*! ./core.get-iterator-method */
+
+/*! ./core_factory */
+
+/*! ./dvr_controls */
+
+/*! ./error */
+
+/*! ./error_mixin */
+
+/*! ./error_screen */
+
+/*! ./es6.array.iterator */
+
+/*! ./events */
+
+/*! ./favicon.js */
+
+/*! ./flash */
+
+/*! ./flashls */
+
+/*! ./flashls_events */
+
+/*! ./get-self-scope */
+
+/*! ./google_analytics */
+
+/*! ./hls */
+
+/*! ./html5_audio */
+
+/*! ./html5_video */
+
+/*! ./html_img */
+
+/*! ./kibo */
+
+/*! ./loader */
+
+/*! ./log */
+
+/*! ./media */
+
+/*! ./media_control */
+
+/*! ./no_op */
+
+/*! ./os_data */
+
+/*! ./playbacks/base_flash_playback */
+
+/*! ./playbacks/flash */
+
+/*! ./playbacks/flashls */
+
+/*! ./playbacks/hls */
+
+/*! ./playbacks/html5_audio */
+
+/*! ./playbacks/html5_video */
+
+/*! ./playbacks/html_img */
+
+/*! ./playbacks/no_op */
+
+/*! ./player_info */
+
+/*! ./plugins/click_to_pause */
+
+/*! ./plugins/dvr_controls */
+
+/*! ./plugins/favicon */
+
+/*! ./plugins/log */
+
+/*! ./plugins/media_control */
+
+/*! ./plugins/poster */
+
+/*! ./plugins/spinner_three_bounce */
+
+/*! ./plugins/watermark */
+
+/*! ./polyfills */
+
+/*! ./poster */
+
+/*! ./public/HLSPlayer.swf */
+
+/*! ./public/Player.swf */
+
+/*! ./public/closed_captions.html */
+
+/*! ./public/closed_captions.scss */
+
+/*! ./public/dvr_controls.scss */
+
+/*! ./public/error.html */
+
+/*! ./public/error_screen.html */
+
+/*! ./public/error_screen.scss */
+
+/*! ./public/flash.html */
+
+/*! ./public/flash.scss */
+
+/*! ./public/fonts.css */
+
+/*! ./public/index.html */
+
+/*! ./public/media-control.html */
+
+/*! ./public/media-control.scss */
+
+/*! ./public/poster.html */
+
+/*! ./public/poster.scss */
+
+/*! ./public/seek_time.html */
+
+/*! ./public/seek_time.scss */
+
+/*! ./public/spinner.html */
+
+/*! ./public/spinner.scss */
+
+/*! ./public/style.scss */
+
+/*! ./public/tracks.html */
+
+/*! ./public/watermark.html */
+
+/*! ./public/watermark.scss */
+
+/*! ./seek_time */
+
+/*! ./spinner_three_bounce */
+
+/*! ./stats */
+
+/*! ./svg_icons */
+
+/*! ./template */
+
+/*! ./ui_object */
+
+/*! ./urls */
+
+/*! ./utils */
+
+/*! ./vendor */
+
+/*! ./watermark */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/eventemitter3/index.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/url-toolkit/src/url-toolkit.js (<- Module is not an ECMAScript module) */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/crypt/decrypter.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/crypt/decrypter.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/demux/demuxer-inline.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/demux/id3.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/demux/id3.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/demux/mp4demuxer.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/demux/mp4demuxer.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/errors.ts because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/errors.ts because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/events.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/events.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/polyfills/number-isFinite.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/polyfills/number-isFinite.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/utils/get-self-scope.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/utils/get-self-scope.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/utils/logger.js because of ./src/demux/demuxer-worker.js */
+
+/*! ModuleConcatenation bailout: Cannot concat with ./src/utils/logger.js because of ./src/hls.ts */
+
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+
+/*! ModuleConcatenation bailout: Module is referenced from these modules with unsupported syntax: ./src/demux/demuxer.js (referenced with require.resolve) */
+
+/*! babel-runtime/core-js/array/from */
+
+/*! babel-runtime/core-js/get-iterator */
+
+/*! babel-runtime/core-js/json/stringify */
+
+/*! babel-runtime/core-js/object/assign */
+
+/*! babel-runtime/core-js/object/create */
+
+/*! babel-runtime/core-js/object/define-property */
+
+/*! babel-runtime/core-js/object/get-own-property-descriptor */
+
+/*! babel-runtime/core-js/object/keys */
+
+/*! babel-runtime/helpers/classCallCheck */
+
+/*! babel-runtime/helpers/createClass */
+
+/*! babel-runtime/helpers/extends */
+
+/*! babel-runtime/helpers/inherits */
+
+/*! babel-runtime/helpers/possibleConstructorReturn */
+
+/*! babel-runtime/helpers/toConsumableArray */
+
+/*! babel-runtime/helpers/typeof */
+
+/*! clappr-zepto */
+
+/*! core-js/library/fn/array/from */
+
+/*! core-js/library/fn/get-iterator */
+
+/*! core-js/library/fn/json/stringify */
+
+/*! core-js/library/fn/object/assign */
+
+/*! core-js/library/fn/object/create */
+
+/*! core-js/library/fn/object/define-property */
+
+/*! core-js/library/fn/object/get-own-property-descriptor */
+
+/*! core-js/library/fn/object/keys */
+
+/*! core-js/library/fn/object/set-prototype-of */
+
+/*! core-js/library/fn/symbol */
+
+/*! core-js/library/fn/symbol/iterator */
+
+/*! eventemitter3 */
+
+/*! exports provided: ErrorTypes, ErrorDetails */
+
+/*! exports provided: default */
+
+/*! exports provided: default, utf8ArrayToStr */
+
+/*! exports provided: enableLogs, logger */
+
+/*! exports provided: getSelfScope */
+
+/*! exports provided: isFiniteNumber */
+
+/*! hls.js */
+
+/*! no static exports found */
+
+/*!*********************!*\
+        !*** ./src/main.js ***!
+        \*********************/
+
+/*!***********************!*\
+                !*** ./src/errors.ts ***!
+                \***********************/
+
+/*!***********************!*\
+                !*** ./src/events.js ***!
+                \***********************/
+
+/*!**************************!*\
+                !*** ./src/demux/id3.js ***!
+                \**************************/
+
+/*!***************************!*\
+        !*** ./src/base/media.js ***!
+        \***************************/
+
+/*!***************************!*\
+        !*** ./src/base/utils.js ***!
+        \***************************/
+
+/*!****************************!*\
+        !*** ./src/base/events.js ***!
+        \****************************/
+
+/*!****************************!*\
+        !*** ./src/base/styler.js ***!
+        \****************************/
+
+/*!****************************!*\
+        !*** ./src/vendor/kibo.js ***!
+        \****************************/
+
+/*!*****************************!*\
+                !*** ./src/utils/logger.js ***!
+                \*****************************/
+
+/*!*****************************!*\
+        !*** ./src/icons/08-hd.svg ***!
+        \*****************************/
+
+/*!*****************************!*\
+        !*** ./src/icons/09-cc.svg ***!
+        \*****************************/
+
+/*!*****************************!*\
+        !*** ./src/vendor/index.js ***!
+        \*****************************/
+
+/*!******************************!*\
+        !*** ./src/base/playback.js ***!
+        \******************************/
+
+/*!******************************!*\
+        !*** ./src/base/template.js ***!
+        \******************************/
+
+/*!*******************************!*\
+        !*** ./src/base/polyfills.js ***!
+        \*******************************/
+
+/*!*******************************!*\
+        !*** ./src/base/svg_icons.js ***!
+        \*******************************/
+
+/*!*******************************!*\
+        !*** ./src/base/ui_object.js ***!
+        \*******************************/
+
+/*!*******************************!*\
+        !*** ./src/icons/01-play.svg ***!
+        \*******************************/
+
+/*!*******************************!*\
+        !*** ./src/icons/03-stop.svg ***!
+        \*******************************/
+
+/*!*******************************!*\
+        !*** ./src/icons/05-mute.svg ***!
+        \*******************************/
+
+/*!********************************!*\
+        !*** ./src/icons/02-pause.svg ***!
+        \********************************/
+
+/*!********************************!*\
+        !*** ./src/plugins/log/log.js ***!
+        \********************************/
+
+/*!********************************!*\
+        !*** ./src/plugins/sources.js ***!
+        \********************************/
+
+/*!********************************!*\
+        !*** ./src/plugins/strings.js ***!
+        \********************************/
+
+/*!*********************************!*\
+                !*** ./src/demux/mp4demuxer.js ***!
+                \*********************************/
+
+/*!*********************************!*\
+                !*** ./src/hls.ts + 50 modules ***!
+                \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/base/base_object.js ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/base/core_plugin.js ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/base/error_mixin.js ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/icons/04-volume.svg ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/icons/06-expand.svg ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/icons/07-shrink.svg ***!
+        \*********************************/
+
+/*!*********************************!*\
+        !*** ./src/icons/10-reload.svg ***!
+        \*********************************/
+
+/*!**********************************!*\
+        !*** ./src/components/player.js ***!
+        \**********************************/
+
+/*!**********************************!*\
+        !*** ./src/playbacks/hls/hls.js ***!
+        \**********************************/
+
+/*!**********************************!*\
+        !*** ./src/plugins/end_video.js ***!
+        \**********************************/
+
+/*!**********************************!*\
+        !*** ./src/plugins/log/index.js ***!
+        \**********************************/
+
+/*!************************************!*\
+        !*** ./src/base/ui_core_plugin.js ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/components/mediator.js ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/playbacks/hls/index.js ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/plugins/stats/index.js ***!
+        \************************************/
+
+/*!************************************!*\
+        !*** ./src/plugins/stats/stats.js ***!
+        \************************************/
+
+/*!*************************************!*\
+                !*** ./src/demux/demuxer-worker.js ***!
+                \*************************************/
+
+/*!*************************************!*\
+                !*** ./src/utils/get-self-scope.js ***!
+                \*************************************/
+
+/*!*************************************!*\
+        !*** ./src/components/core/core.js ***!
+        \*************************************/
+
+/*!*************************************!*\
+        !*** ./src/plugins/poster/index.js ***!
+        \*************************************/
+
+/*!**************************************!*\
+        !*** ./src/base/container_plugin.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/components/core/index.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/playbacks/flash/flash.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/playbacks/flash/index.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/playbacks/no_op/index.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/playbacks/no_op/no_op.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/plugins/favicon/index.js ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./src/plugins/poster/poster.js ***!
+        \**************************************/
+
+/*!***************************************!*\
+        !*** ./src/components/error/error.js ***!
+        \***************************************/
+
+/*!***************************************!*\
+        !*** ./src/components/error/index.js ***!
+        \***************************************/
+
+/*!***************************************!*\
+        !*** ./src/components/player_info.js ***!
+        \***************************************/
+
+/*!****************************************!*\
+        !*** ./src/components/loader/index.js ***!
+        \****************************************/
+
+/*!****************************************!*\
+        !*** ./src/playbacks/flashls/index.js ***!
+        \****************************************/
+
+/*!****************************************!*\
+        !*** ./src/plugins/favicon/favicon.js ***!
+        \****************************************/
+
+/*!****************************************!*\
+        !*** ./src/plugins/seek_time/index.js ***!
+        \****************************************/
+
+/*!****************************************!*\
+        !*** ./src/plugins/watermark/index.js ***!
+        \****************************************/
+
+/*!*****************************************!*\
+        !*** ./node_modules/hls.js/dist/hls.js ***!
+        \*****************************************/
+
+/*!*****************************************!*\
+        !*** ./src/base/ui_container_plugin.js ***!
+        \*****************************************/
+
+/*!*****************************************!*\
+        !*** ./src/components/browser/index.js ***!
+        \*****************************************/
+
+/*!*****************************************!*\
+        !*** ./src/components/loader/loader.js ***!
+        \*****************************************/
+
+/*!*****************************************!*\
+        !*** ./src/playbacks/html_img/index.js ***!
+        \*****************************************/
+
+/*!******************************************!*\
+                !*** ./src/polyfills/number-isFinite.js ***!
+                \******************************************/
+
+/*!******************************************!*\
+        !*** ./src/playbacks/flashls/flashls.js ***!
+        \******************************************/
+
+/*!*******************************************!*\
+        !*** ./src/components/browser/browser.js ***!
+        \*******************************************/
+
+/*!*******************************************!*\
+        !*** ./src/components/browser/os_data.js ***!
+        \*******************************************/
+
+/*!*******************************************!*\
+        !*** ./src/components/container/index.js ***!
+        \*******************************************/
+
+/*!*******************************************!*\
+        !*** ./src/plugins/dvr_controls/index.js ***!
+        \*******************************************/
+
+/*!*******************************************!*\
+        !*** ./src/plugins/error_screen/index.js ***!
+        \*******************************************/
+
+/*!********************************************!*\
+                !*** ./src/crypt/decrypter.js + 3 modules ***!
+                \********************************************/
+
+/*!********************************************!*\
+        !*** ./node_modules/clappr-zepto/zepto.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/playbacks/html5_audio/index.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/playbacks/html5_video/index.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/playbacks/html_img/html_img.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/plugins/media_control/index.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/plugins/seek_time/seek_time.js ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./src/plugins/watermark/watermark.js ***!
+        \********************************************/
+
+/*!*********************************************!*\
+                !*** ./node_modules/eventemitter3/index.js ***!
+                \*********************************************/
+
+/*!*********************************************!*\
+        !*** ./src/plugins/click_to_pause/index.js ***!
+        \*********************************************/
+
+/*!**********************************************!*\
+        !*** ./src/components/core/public/fonts.css ***!
+        \**********************************************/
+
+/*!**********************************************!*\
+        !*** ./src/components/core_factory/index.js ***!
+        \**********************************************/
+
+/*!**********************************************!*\
+        !*** ./src/plugins/closed_captions/index.js ***!
+        \**********************************************/
+
+/*!***********************************************!*\
+        !*** ./node_modules/style-loader/lib/urls.js ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/components/container/container.js ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/components/core/public/Roboto.ttf ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/components/core/public/style.scss ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/playbacks/flash/public/Player.swf ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/playbacks/no_op/public/error.html ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/playbacks/no_op/public/style.scss ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/plugins/google_analytics/index.js ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/plugins/poster/public/poster.html ***!
+        \***********************************************/
+
+/*!***********************************************!*\
+        !*** ./src/plugins/poster/public/poster.scss ***!
+        \***********************************************/
+
+/*!************************************************!*\
+        !*** ./src/components/browser/browser_data.js ***!
+        \************************************************/
+
+/*!*************************************************!*\
+        !*** ./node_modules/css-loader/lib/css-base.js ***!
+        \*************************************************/
+
+/*!*************************************************!*\
+        !*** ./src/playbacks/flashls/flashls_events.js ***!
+        \*************************************************/
+
+/*!**************************************************!*\
+                !*** ./node_modules/webworkify-webpack/index.js ***!
+                \**************************************************/
+
+/*!**************************************************!*\
+                !*** ./src/demux/demuxer-inline.js + 12 modules ***!
+                \**************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/playbacks/html5_audio/html5_audio.js ***!
+        \**************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/playbacks/html5_video/html5_video.js ***!
+        \**************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/playbacks/html_img/public/style.scss ***!
+        \**************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/plugins/dvr_controls/dvr_controls.js ***!
+        \**************************************************/
+
+/*!**************************************************!*\
+        !*** ./src/plugins/error_screen/error_screen.js ***!
+        \**************************************************/
+
+/*!***************************************************!*\
+        !*** ./node_modules/css-loader/lib/url/escape.js ***!
+        \***************************************************/
+
+/*!***************************************************!*\
+        !*** ./src/components/container_factory/index.js ***!
+        \***************************************************/
+
+/*!***************************************************!*\
+        !*** ./src/plugins/spinner_three_bounce/index.js ***!
+        \***************************************************/
+
+/*!****************************************************!*\
+        !*** ./node_modules/style-loader/lib/addStyles.js ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/components/container/public/style.scss ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/playbacks/base_flash_playback/index.js ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/playbacks/flashls/public/HLSPlayer.swf ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/plugins/dvr_controls/public/index.html ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./src/plugins/media_control/media_control.js ***!
+        \****************************************************/
+
+/*!*****************************************************!*\
+                !*** ./node_modules/url-toolkit/src/url-toolkit.js ***!
+                \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/components/core_factory/core_factory.js ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/playbacks/html5_video/public/style.scss ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/plugins/seek_time/public/seek_time.html ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/plugins/seek_time/public/seek_time.scss ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/plugins/watermark/public/watermark.html ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./src/plugins/watermark/public/watermark.scss ***!
+        \*****************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/symbol.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/typeof.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_cof.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_ctx.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_has.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_uid.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_wks.js ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./src/playbacks/html5_video/public/tracks.html ***!
+        \******************************************************/
+
+/*!******************************************************!*\
+        !*** ./src/plugins/click_to_pause/click_to_pause.js ***!
+        \******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/extends.js ***!
+        \*******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/core-js/library/fn/array/from.js ***!
+        \*******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_core.js ***!
+        \*******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_hide.js ***!
+        \*******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_html.js ***!
+        \*******************************************************/
+
+/*!*******************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_meta.js ***!
+        \*******************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/inherits.js ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/keys.js ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_fails.js ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_keyof.js ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./src/plugins/closed_captions/closed_captions.js ***!
+        \********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/get-iterator.js ***!
+        \*********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/symbol/index.js ***!
+        \*********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_export.js ***!
+        \*********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_global.js ***!
+        \*********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_shared.js ***!
+        \*********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/array/from.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/assign.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/create.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_classof.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_defined.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iobject.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_library.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_wks-ext.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./src/plugins/google_analytics/google_analytics.js ***!
+        \**********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./src/plugins/media_control/public/closed-hand.cur ***!
+        \**********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/keys.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/createClass.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/core-js/library/fn/json/stringify.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_is-array.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_redefine.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-index.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./src/plugins/dvr_controls/public/dvr_controls.scss ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./src/plugins/error_screen/public/error_screen.html ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./src/plugins/error_screen/public/error_screen.scss ***!
+        \***********************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/get-iterator.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/fn/symbol/iterator.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_an-object.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_enum-keys.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_is-object.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iter-call.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iter-step.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iterators.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-dp.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_set-proto.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_string-at.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-length.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-object.js ***!
+        \************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.symbol.js ***!
+        \************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/assign.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/create.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_a-function.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_dom-create.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-dps.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-gpo.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-pie.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-sap.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_shared-key.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-integer.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-iobject.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_wks-define.js ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./src/playbacks/base_flash_playback/public/flash.html ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./src/playbacks/base_flash_playback/public/flash.scss ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./src/plugins/media_control/public/media-control.html ***!
+        \*************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./src/plugins/media_control/public/media-control.scss ***!
+        \*************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/json/stringify.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/classCallCheck.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_descriptors.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iter-create.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iter-define.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_iter-detect.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-gopd.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-gopn.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-gops.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-keys.js ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./src/plugins/spinner_three_bounce/public/spinner.html ***!
+        \**************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./src/plugins/spinner_three_bounce/public/spinner.scss ***!
+        \**************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/symbol/iterator.js ***!
+        \***************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_to-primitive.js ***!
+        \***************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./src/components/container_factory/container_factory.js ***!
+        \***************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_enum-bug-keys.js ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_is-array-iter.js ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-assign.js ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-create.js ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_property-desc.js ***!
+        \****************************************************************/
+
+/*!****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.array.from.js ***!
+        \****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/toConsumableArray.js ***!
+        \*****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_array-includes.js ***!
+        \*****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_ie8-dom-define.js ***!
+        \*****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.keys.js ***!
+        \*****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./src/plugins/closed_captions/public/closed_captions.html ***!
+        \*****************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./src/plugins/closed_captions/public/closed_captions.scss ***!
+        \*****************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_create-property.js ***!
+        \******************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-gopn-ext.js ***!
+        \******************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/web.dom.iterable.js ***!
+        \******************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./src/playbacks/base_flash_playback/base_flash_playback.js ***!
+        \******************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./src/plugins/spinner_three_bounce/spinner_three_bounce.js ***!
+        \******************************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/define-property.js ***!
+        \*******************************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/core.get-iterator.js ***!
+        \*******************************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.assign.js ***!
+        \*******************************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.create.js ***!
+        \*******************************************************************/
+
+/*!********************************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/set-prototype-of.js ***!
+        \********************************************************************/
+
+/*!********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_set-to-string-tag.js ***!
+        \********************************************************************/
+
+/*!********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.array.iterator.js ***!
+        \********************************************************************/
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_add-to-unscopables.js ***!
+        \*********************************************************************/
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.string.iterator.js ***!
+        \*********************************************************************/
+
+/*!**********************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/define-property.js ***!
+        \**********************************************************************/
+
+/*!**********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.to-string.js ***!
+        \**********************************************************************/
+
+/*!***********************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/set-prototype-of.js ***!
+        \***********************************************************************/
+
+/*!***********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/_object-keys-internal.js ***!
+        \***********************************************************************/
+
+/*!***********************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es7.symbol.observable.js ***!
+        \***********************************************************************/
+
+/*!************************************************************************!*\
+        !*** ./node_modules/node-libs-browser/node_modules/process/browser.js ***!
+        \************************************************************************/
+
+/*!*************************************************************************!*\
+        !*** ./node_modules/babel-runtime/helpers/possibleConstructorReturn.js ***!
+        \*************************************************************************/
+
+/*!**************************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/core.get-iterator-method.js ***!
+        \**************************************************************************/
+
+/*!***************************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es7.symbol.async-iterator.js ***!
+        \***************************************************************************/
+
+/*!****************************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.define-property.js ***!
+        \****************************************************************************/
+
+/*!*****************************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.set-prototype-of.js ***!
+        \*****************************************************************************/
+
+/*!*******************************************************************************!*\
+        !*** ./node_modules/core-js/library/fn/object/get-own-property-descriptor.js ***!
+        \*******************************************************************************/
+
+/*!**********************************************************************************!*\
+        !*** ./node_modules/babel-runtime/core-js/object/get-own-property-descriptor.js ***!
+        \**********************************************************************************/
+
+/*!****************************************************************************************!*\
+        !*** ./node_modules/core-js/library/modules/es6.object.get-own-property-descriptor.js ***!
+        \****************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/components/core/public/style.scss ***!
+        \************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/playbacks/no_op/public/style.scss ***!
+        \************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/poster/public/poster.scss ***!
+        \************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/playbacks/html_img/public/style.scss ***!
+        \***************************************************************************************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/components/container/public/style.scss ***!
+        \*****************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/playbacks/html5_video/public/style.scss ***!
+        \******************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/seek_time/public/seek_time.scss ***!
+        \******************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/watermark/public/watermark.scss ***!
+        \******************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/dvr_controls/public/dvr_controls.scss ***!
+        \************************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/error_screen/public/error_screen.scss ***!
+        \************************************************************************************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/playbacks/base_flash_playback/public/flash.scss ***!
+        \**************************************************************************************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/media_control/public/media-control.scss ***!
+        \**************************************************************************************************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/spinner_three_bounce/public/spinner.scss ***!
+        \***************************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+        !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib!./node_modules/sass-loader/lib/loader.js?includePaths[]=/Users/joaopaulo/Workstation/JS/clappr/src/base/scss!./src/plugins/closed_captions/public/closed_captions.scss ***!
+        \******************************************************************************************************************************************************************************************************************************************/
+
+/**
+ * @license
+ * Lodash <https://lodash.com/>
+ * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** @license React v0.20.1
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.1
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.1
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.1
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
