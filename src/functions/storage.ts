@@ -46,31 +46,3 @@ class ProxyConfig<T extends GenericObject> implements ProxyHandler<T> {
 export default function storage<T extends GenericObject>(storage: Storage, suffix: string, defaults: T): T {
     return new Proxy(defaults, new ProxyConfig(storage, suffix)) as T
 }
-
-//
-// function mountKey(key: string, name: string): string {
-//     return `${key}:${name}`
-// }
-//
-// function get(storage: Storage, key: string, target: GenericObject, name: string): any {
-//     if (!target[name]) {
-//         target[name] = JSON.parse(storage.getItem(mountKey(key, name)) || "null") || null
-//     }
-//     return target[name] || null
-// }
-//
-// function set(storage: Storage, key: string, target: GenericObject, name: string, value: string): boolean {
-//     target[name] = value
-//
-//     storage.setItem(mountKey(key, name), JSON.stringify(value))
-//
-//     return true
-// }
-//
-// export default function storage<T extends GenericObject>(storage: Storage, key: string, defaults: T): T {
-//     return new Proxy(defaults, {
-//         get: get.bind(undefined, storage, key),
-//         set: set.bind(undefined, storage, key)
-//     }) as T
-// }
-//

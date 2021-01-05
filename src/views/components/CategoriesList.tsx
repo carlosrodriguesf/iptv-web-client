@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styles from "./CategoriesList.module.scss";
 import classNames from "classnames";
-import {Category} from "../../api/Types";
+import {Category} from "../../api/ApiService";
 
 interface CategoriesListProps {
     categories: Category[]

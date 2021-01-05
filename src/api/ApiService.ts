@@ -1,10 +1,11 @@
 import storage from "../functions/storage";
 import axios from "axios";
-import {toCamelCase, toSnakeCase} from "../functions/case";
-import {OutputFormat} from "./Credentials";
+import {toCamelCase} from "../functions/case";
 import {get} from 'lodash'
 
 export type Actions = "get_live_streams" | "get_live_categories" | "get_vod_categories" | "get_vod_streams"
+
+export type OutputFormat = "m3u8" | "ts"
 
 export interface Credentials {
     url: string
