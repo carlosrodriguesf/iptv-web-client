@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import LiveMenu from "./views/screens/LiveMenu";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     Redirect
